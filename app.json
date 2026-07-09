@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Aetherflow Studio",
+    "slug": "aetherflow-studio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "aetherflow",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": { "backgroundColor": "#0A0F1A" },
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.aetherflow.studio" },
+    "android": { "adaptiveIcon": { "backgroundColor": "#0A0F1A" }, "package": "com.aetherflow.studio" },
+    "web": { "bundler": "metro", "output": "single", "backgroundColor": "#0A0F1A" },
+    "plugins": ["expo-router", "expo-audio"],
+    "experiments": { "typedRoutes": true }
+  }
+}
