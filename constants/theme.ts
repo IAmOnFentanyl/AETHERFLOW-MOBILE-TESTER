@@ -16,6 +16,7 @@ export const Colors = {
     blue: '#3B82F6',
     purple: '#A855F7',
     gold: '#F59E0B',
+    cyanGlow: 'rgba(0, 212, 255, 0.1)',
   },
   status: {
     success: '#22C55E',
@@ -24,8 +25,10 @@ export const Colors = {
   },
   glass: {
     white5: 'rgba(255,255,255,0.05)',
+    white8: 'rgba(255,255,255,0.08)',
     white10: 'rgba(255,255,255,0.1)',
     white20: 'rgba(255,255,255,0.2)',
+    border: 'rgba(255,255,255,0.1)',
   },
   track: {
     colors: ['#00D4FF', '#FF006E', '#F59E0B', '#22C55E', '#A855F3', '#EF4444', '#3B82F6', '#14B8A6'],
@@ -48,6 +51,9 @@ export const Typography = {
     semibold: '600' as const,
     bold: '700' as const,
   },
+  body: 'Inter_400Regular',
+  bodyMedium: 'Inter_500Medium',
+  bodySemiBold: 'Inter_600SemiBold',
 };
 
 export const Spacing = {
