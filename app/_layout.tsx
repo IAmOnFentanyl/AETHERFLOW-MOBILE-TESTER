@@ -4,22 +4,37 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Colors } from '@/constants/theme';
 import { useFrameworkReady } from '@/hooks/useFrameworkReady';
+import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 
-export default function RootLayout() {
+function RootLayoutContent() {
+  const { loading, session } = useAuth();
+
+  // Framework initialization
   useFrameworkReady();
 
   return (
-    <SafeAreaProvider>
-      <StatusBar style="light" />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: Colors.bg.deep },
-        }}
-      >
-        <Stack.Screen name="(auth)" />
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: Colors.bg.deep },
+      }}
+    >
+      {session ? (
         <Stack.Screen name="(tabs)" />
-      </Stack>
-    </SafeAreaProvider>
+      ) : (
+        <Stack.Screen name="(auth)" />
+      )}
+    </Stack>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <AuthProvider>
+      <SafeAreaProvider>
+        <StatusBar style="light" />
+        <RootLayoutContent />
+      </SafeAreaProvider>
+    </AuthProvider>
   );
 }
